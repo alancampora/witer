@@ -1,5 +1,6 @@
 import { MikroORM } from '@mikro-orm/core';
 import { Post } from './entities/post';
+import { User } from './entities/user';
 import path from 'path';
 
 const __prod__ = process.env.NODE_ENV === 'production';
@@ -9,8 +10,8 @@ export default {
 		path: path.join(__dirname, './migrations'),
 		pattern: /^[\w-]+\d+\.[tj]s$/,
 	},
-	entities: [Post],
-	dbName: 'witer',
+	entities: [Post, User],
+	dbName: 'witer2',
 	user: 'witer',
 	password: 'witer',
 	type: 'postgresql',
