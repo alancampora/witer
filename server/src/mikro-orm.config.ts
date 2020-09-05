@@ -11,9 +11,9 @@ export default {
 		pattern: /^[\w-]+\d+\.[tj]s$/,
 	},
 	entities: [Post, User],
-	dbName: 'witer2',
-	user: 'witer',
-	password: 'witer',
+	dbName: 'witer',
+	user: 'alan',
+	password: 'alan',
 	type: 'postgresql',
 	debug: !__prod__,
 } as Parameters<typeof MikroORM.init>[0];

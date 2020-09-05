@@ -95,6 +95,11 @@ export default class UserResolver {
     return { user };
   }
 
+  @Query(() => [User])
+  async users(@Ctx() { em }: MyContext): Promise<User[]> {
+    return em.find(User, {});
+  }
+
   @Query(() => UserResponse)
   async me(@Ctx() { em, req }: MyContext): Promise<UserResponse> {
     const userId = req.session.userId;

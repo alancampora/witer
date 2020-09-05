@@ -19,6 +19,7 @@ export default class PostResolver {
     @Arg("title") title: string,
     @Ctx() ctx: MyContext
   ): Promise<Post> {
+    console.log('pasa por el create post');
     const post = ctx.em.create(Post, { title });
     await ctx.em.persistAndFlush(post);
     return post;
