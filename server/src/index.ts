@@ -12,6 +12,7 @@ import redis from "redis";
 import session from "express-session";
 import connectRedis from "connect-redis";
 import cors from "cors";
+import {COOKIE_NAME} from "./constants";
 
 const __prod__ = process.env.NODE_ENV === "production";
 
@@ -35,7 +36,7 @@ const main = async () => {
 
   app.use(
     session({
-      name: "qid",
+      name: COOKIE_NAME,
       store: new RedisStore({
         client: redisClient,
         disableTouch: true,
