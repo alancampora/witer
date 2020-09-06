@@ -5,8 +5,7 @@ mutation Login($options: UsernamePasswordInput!) {
       field
     }
     user {
-      id
-      username
+      ...RegularUser
     }
   }
 }
